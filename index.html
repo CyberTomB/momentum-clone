@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/style/main.css">
     <link rel="stylesheet" href="assets/style/style.css">
     <title>Inspire</title>
@@ -30,18 +31,53 @@
     }
 </style>
 
-<body class="bg-transparent text-light debug"
+<body class="bg-transparent text-light"
     style="background-image: url(https://images.unsplash.com/photo-1564832586408-3b10f4f41541?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2090&q=80)">
     <header class="container-fluid">
         <div class="row justify-content-end">
-            <h3 class="col-2 text-right">43°</h3>
+            <h3 class="col-2 text-right" id="weather">43°</h3>
         </div>
     </header>
     <main class="container-fluid">
+        <div class="row justify-content-end">
+            <div class="col-4 align-self-center text-center" id="clock">
+                <h1>12:00</h1>
+                <h3>Good Day Sir</h3>
+            </div>
+            <div class="col-4 d-flex align-self-end align-content-end justify-content-end">
+                <div class="card bg-gray text-light spill" style="width: 22rem;" id="todo">
+                    <div class="bg-dark text-light">
+                        <div class="card-header">
+                            To-do today:
+                        </div>
+                        <ul class="bg-dark list-group list-group-flush">
+                            <li class="bg-gray list-group-item"><input type="checkbox" id="" name="" onclick="">
+                                <label for="">This task is a task
+                                    <i class="text-danger mdi mdi-delete">
+                                    </i></label>
+                            </li>
+                            <li class="bg-gray list-group-item"><input type="checkbox"> <label>Vestibulum at
+                                    eros</label>
+                            </li>
+                            <li class="bg-gray list-group-item"><input type="checkbox"> <label>Vestibulum at
+                                    eros</label>
+                            </li>
+                            <li class="bg-gray list-group-item"><input type="checkbox"> <label>Vestibulum at
+                                    eros</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-
+        </div>
     </main>
-    <footer class="">
+    <footer class="container-fluid">
+        <div class="row justify-content-between">
+            <h3 class="col-3 align-self-end" id="image-desc">Image Description</h3>
+            <h3 class="col-4 text-center" id="quote">Quote</h3>
+            <h3 class="col-3 text-right"></h3>
+        </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"
         integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk=" crossorigin="anonymous"></script>
