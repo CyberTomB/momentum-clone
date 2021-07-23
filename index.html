@@ -31,8 +31,7 @@
     }
 </style>
 
-<body class="bg-transparent text-light"
-    style="background-image: url(https://images.unsplash.com/photo-1564832586408-3b10f4f41541?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2090&q=80)">
+<body class="bg-transparent text-light" id="background">
     <header class="container-fluid">
         <div class="row justify-content-end">
             <h3 class="col-2 text-right" id="weather">43°</h3>
@@ -40,8 +39,8 @@
     </header>
     <main class="container-fluid">
         <div class="row justify-content-end">
-            <div class="col-4 align-self-center text-center" id="clock">
-                <h1>12:00</h1>
+            <div class="col-4 align-self-center text-center">
+                <h1 id="clock">12:00</h1>
                 <h3>Good Day Sir</h3>
             </div>
             <div class="col-4 d-flex align-self-end align-content-end justify-content-end">
@@ -74,7 +73,10 @@
     </main>
     <footer class="container-fluid">
         <div class="row justify-content-between">
-            <h3 class="col-3 align-self-end" id="image-desc">Image Description</h3>
+            <div class="col-3 align-self-end" id="image-desc">
+                <h6 id="image-author">Author</h6>
+                <small id="image-url">url goes here</small>
+            </div>
             <h3 class="col-4 text-center" id="quote">Quote</h3>
             <h3 class="col-3 text-right"></h3>
         </div>
