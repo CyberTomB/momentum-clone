@@ -10711,11 +10711,21 @@ footer {
   height: 100%;
 }
 
+.action {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 992px) {
   .spill {
-    bottom: -3rem;
+    bottom: -4rem;
     position: absolute;
   }
+}
+#image-desc {
+  background-color: rgba(105, 105, 105, 0.25);
+}
+#image-desc a {
+  color: #e4e4e4;
 }
 
 /*# sourceMappingURL=main.css.map */

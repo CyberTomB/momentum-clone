@@ -8,7 +8,12 @@ class BackgroundService {
       let res = await sandBoxApi.get('images')
       console.log(res.data)
       document.body.style.backgroundImage = `url(${res.data.imgUrl})`
-      console.log(document.body.style.backgroundImage)
+      document.getElementById('image-desc').innerHTML =
+         `<h6>Image by: ${res.data.author}</h6>
+      <a href="${res.data.url}">${res.data.url}</a>`
+
+      // document.getElementById('img-author').innerText = res.data.author
+      // document.getElementById('img-url').innerText = res.data.url
    }
 }
 
