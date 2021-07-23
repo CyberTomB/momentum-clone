@@ -1,7 +1,9 @@
-import ValuesController from "./Controllers/ValuesController.js";
+import QuotesController from "./Controllers/QuotesController.js";
+
 
 class App {
-  valuesController = new ValuesController();
+  quotesController = new QuotesController()
+
 }
 
 window["app"] = new App();
