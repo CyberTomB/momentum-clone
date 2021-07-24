@@ -31,7 +31,7 @@
     }
 </style>
 
-<body class="bg-transparent text-light debug" id="background">
+<body class="bg-transparent text-light" id="background">
     <header class="container-fluid">
         <div class="row justify-content-end">
             <h3 class="col-2 text-right" id="weather">43°</h3>
@@ -39,7 +39,7 @@
     </header>
     <main class="container-fluid">
         <div class="row justify-content-end">
-            <div class="col-4 align-self-center text-center shadow">
+            <div class="col-4 align-self-center text-center text-block">
                 <h1 id="clock">12:00</h1>
                 <h3>Good Day Sir</h3>
             </div>
@@ -49,9 +49,9 @@
                         <div class="card-header">
                             To-do today:
                         </div>
-                        <ul class="bg-dark list-group list-group-flush">
-                            <li class="bg-gray list-group-item"><input type="checkbox" id="" name="" onclick="">
-                                <label for="">This task is a task
+                        <ul class="bg-dark list-group list-group-flush" id="tasks">
+                            <li class="bg-gray list-group-item"><input type="checkbox">
+                                <label>This task is a task
                                     <i class="text-danger mdi mdi-delete">
                                     </i></label>
                             </li>
@@ -65,6 +65,11 @@
                                     eros</label>
                             </li>
                         </ul>
+                        <form class="card-footer" onsubmit="app.tasksController.addTask(event)">
+                            <input type="text" name="task" placeholder="Add task..." required minlength="3"
+                                maxlength="50">
+                            <button type="submit" class="btn btn-outline-success">+</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -72,19 +77,18 @@
         </div>
     </main>
     <footer class="container-fluid">
-        <div class="row justify-content-between">
+        <div class="row justify-content-start">
             <div class="col-3 align-self-end">
-                <div class="p-3 float-left" id="image-desc">
+                <div class="p-3 float-left text-block" id="image-desc">
                     <h6 id="img-author">Author</h6>
                     <small href="" id="img-url"></small>
                 </div>
 
             </div>
-            <div class="col-6 text-center shadow" id="quote">
+            <div class="col-6 text-center justify-content-center d-flex flex-column" id="quote">
                 <h3>“All of humanity's problems stem from man's inability to sit quietly in a room alone.”</h3>
                 <h6 class="author">Blaise Pascal</h6>
             </div>
-            <h3 class="col-3 text-right"></h3>
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"

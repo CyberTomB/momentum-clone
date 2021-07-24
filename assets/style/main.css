@@ -10721,10 +10721,10 @@ footer {
     position: absolute;
   }
 }
-#image-desc {
+.text-block {
   background-color: rgba(105, 105, 105, 0.25);
 }
-#image-desc a {
+.text-block a {
   color: #e4e4e4;
 }
 
@@ -10734,6 +10734,11 @@ footer {
 #quote .author {
   opacity: 0;
   transition: all 0.3s linear;
+}
+
+#tasks {
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -43,7 +43,7 @@ footer{
   }
   }
 
-  #image-desc{
+  .text-block{
     background-color: rgb(105, 105, 105, .25);
     a{
       color:rgb(228, 228, 228)
@@ -60,4 +60,9 @@ footer{
       opacity: 0;
       transition: all .3s linear
     }
+  }
+
+  #tasks {
+    max-height: 50vh;
+    overflow-y: auto;
   }
