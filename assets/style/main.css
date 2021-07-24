@@ -10728,4 +10728,12 @@ footer {
   color: #e4e4e4;
 }
 
+#quote:hover .author {
+  opacity: 1;
+}
+#quote .author {
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
 /*# sourceMappingURL=main.css.map */

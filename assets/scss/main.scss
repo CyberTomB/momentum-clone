@@ -49,3 +49,15 @@ footer{
       color:rgb(228, 228, 228)
     }
   }
+
+  #quote {
+    &:hover{
+      .author {
+        opacity: 1;
+      }
+    }
+    .author {
+      opacity: 0;
+      transition: all .3s linear
+    }
+  }
