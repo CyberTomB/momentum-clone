@@ -8,7 +8,7 @@ export default class Task {
    get Template() {
       return `
       <li class="bg-gray list-group-item"><input type="checkbox" id="${this.id}" name="${this.description}" onclick="app.tasksController.isTaskChecked('${this.id}')" ${this.completed ? 'checked' : ''}>
-      <label for="">${this.description}
+      <label for="${this.id}">${this.completed ? '<s>' : ''}${this.description}${this.completed ? '</s>' : ''}
          <i class="text-danger mdi mdi-delete" onclick="app.tasksController.killTask('${this.id}')">
          </i></label>
                                </li>`

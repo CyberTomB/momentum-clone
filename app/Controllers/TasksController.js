@@ -4,11 +4,32 @@ import { tasksService } from "../Services/TasksService.js";
 
 function _drawTasks() {
    console.log('I heard that')
+   console.log(ProxyState.tasks.length == 0)
    let template = ''
+   if (ProxyState.tasks.length == 0) {
+      template =
+         `<li class="bg-gray list-group-item"><p>You've got nothing to do today!</p></li>`
+   }
    ProxyState.tasks.forEach(t => {
       template += t.Template
    })
    document.getElementById('tasks').innerHTML = template
+   _drawTodoCount()
+}
+
+function _drawTodoCount() {
+   console.log('drawing todo')
+   let completedTasks = 0
+   let totalTasks = 0
+   let template = ':'
+   ProxyState.tasks.forEach(t => {
+      t.completed ? completedTasks += 1 : completedTasks += 0
+      totalTasks += 1
+   })
+   if (totalTasks) {
+      template = ` (${completedTasks}/${totalTasks}):`
+   }
+   document.getElementById('todo-count').innerText = template
 }
 export default class TasksController {
    constructor() {
