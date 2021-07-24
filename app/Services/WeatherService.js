@@ -8,6 +8,7 @@ function _drawWeather() {
 class WeatherService {
    constructor() {
       this.getWeather()
+      ProxyState.on('weather', _drawWeather)
    }
 
    async getWeather() {

@@ -12,6 +12,10 @@ export default class Weather {
          this.temp = Math.floor((this.temp * 1.8) + 32)
       }
       return `
-      ${this.temp} ${this.humidity} ${this.weather} ${this.celsius} ${this.icon}`
+      <img class="float-left" src="${this.icon}" alt="${this.weather}">
+                <div>
+                    <h3 class="">${this.temp}° F</h3>
+                    <p>${this.weather}</p>
+                </div>`
    }
 }
