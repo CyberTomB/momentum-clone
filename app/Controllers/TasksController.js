@@ -43,6 +43,14 @@ export default class TasksController {
       form.reset()
    }
 
+   async killTask(id) {
+      try {
+         await tasksService.killTask(id)
+      } catch (error) {
+         console.error('unable to kill task:', id)
+      }
+   }
+
 
    isTaskChecked(id) {
       tasksService.isTaskChecked(id)
