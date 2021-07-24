@@ -31,10 +31,16 @@
     }
 </style>
 
-<body class="bg-transparent text-light" id="background">
+<body class="bg-transparent text-light debug" id="background">
     <header class="container-fluid">
         <div class="row justify-content-end">
-            <h3 class="col-2 text-right" id="weather">43°</h3>
+            <div class="col-2 justify-content-center d-flex align-items-center" id="weather">
+                <img class="float-left" src="http://openweathermap.org/img/wn/50d@2x.png" alt="haze">
+                <div>
+                    <h3 class="shadow">95 F</h3>
+                    <p>Smoke</p>
+                </div>
+            </div>
         </div>
     </header>
     <main class="container-fluid">
