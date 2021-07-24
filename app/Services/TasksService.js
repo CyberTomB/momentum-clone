@@ -10,9 +10,11 @@ class TasksService {
       ProxyState.tasks = [...ProxyState.tasks, newTask]
       console.log('reply from server', res.data)
    }
-   isTaskChecked(id) {
+   async isTaskChecked(id) {
       let task = ProxyState.tasks.find(task => task.id == id)
-      task.checked = document.getElementById(task.id).checked
+      task.completed = !task.completed
+      console.log('checked task:', task.completed)
+      let res = await sandBoxApi.put(`/tom/todos/${task.id}`, { completed: task.completed })
       ProxyState.tasks = ProxyState.tasks
    }
 

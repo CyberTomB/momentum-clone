@@ -10736,7 +10736,10 @@ footer {
   transition: all 0.3s linear;
 }
 
-#tasks {
+#todo {
+  overflow: hidden;
+}
+#todo #tasks {
   max-height: 50vh;
   overflow-y: auto;
 }

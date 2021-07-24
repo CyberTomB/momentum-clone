@@ -3,6 +3,7 @@ import Task from "../Models/Task.js";
 import { tasksService } from "../Services/TasksService.js";
 
 function _drawTasks() {
+   console.log('I heard that')
    let template = ''
    ProxyState.tasks.forEach(t => {
       template += t.Template
@@ -52,7 +53,11 @@ export default class TasksController {
    }
 
 
-   isTaskChecked(id) {
-      tasksService.isTaskChecked(id)
+   async isTaskChecked(id) {
+      try {
+         await tasksService.isTaskChecked(id)
+      } catch (error) {
+         console.error('unable to mark task complete', id, erorr)
+      }
    }
 }

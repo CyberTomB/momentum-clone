@@ -62,7 +62,10 @@ footer{
     }
   }
 
-  #tasks {
-    max-height: 50vh;
-    overflow-y: auto;
+  #todo{
+    overflow: hidden;
+    #tasks {
+      max-height: 50vh;
+      overflow-y: auto;
+  }
   }
