@@ -12,8 +12,8 @@ export default class Weather {
       return `
       <img class="float-left" src="${this.icon}" alt="${this.weather}">
                 <div>
-                    <h3 class="">${this.celsius ? this.tempC : this.tempF}° <span class="action" onclick="app.weather.setTempFormat('${!this.celsius}')">F</span></h3>
-                    <p>${this.weather}</p>
-                </div>`
+                    <h3 class="">${this.celsius ? this.tempC : this.tempF}° <span class="action" onclick="app.weather.setTempFormat(${!this.celsius})">${this.celsius ? 'C' : 'F'}</span ></h3 >
+         <p>${this.weather}</p>
+                </div > `
    }
 }

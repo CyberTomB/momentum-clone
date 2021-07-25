@@ -17,7 +17,7 @@ class WeatherService {
    async getWeather() {
       let res = await sandBoxApi.get('weather')
       console.log('weather data:', res.data)
-      ProxyState.weather = new Weather(res.data, false)
+      ProxyState.weather = new Weather(res.data, true)
       console.log('weather object: ', ProxyState.weather)
       console.log('weather html', ProxyState.weather.Template)
    }
