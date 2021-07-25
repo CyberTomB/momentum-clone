@@ -1,6 +1,7 @@
 export default class Weather {
    constructor(data, celsius = true) {
-      this.temp = Math.round(data.main.temp - 273.15)
+      this.tempC = Math.round(data.main.temp - 273.15)
+      this.tempF = Math.floor((this.tempC * 1.8) + 32)
       this.humidity = data.main.humidity
       this.weather = data.weather[0].main
       this.celsius = celsius
@@ -8,13 +9,10 @@ export default class Weather {
    }
 
    get Template() {
-      if (!this.celsius) {
-         this.temp = Math.floor((this.temp * 1.8) + 32)
-      }
       return `
       <img class="float-left" src="${this.icon}" alt="${this.weather}">
                 <div>
-                    <h3 class="">${this.temp}° F</h3>
+                    <h3 class="">${this.celsius ? this.tempC : this.tempF}° <span class="action" onclick="app.weather.setTempFormat('${!this.celsius}')">F</span></h3>
                     <p>${this.weather}</p>
                 </div>`
    }
