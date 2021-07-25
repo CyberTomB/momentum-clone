@@ -48,11 +48,13 @@ export default class TasksController {
       event.preventDefault()
       let form = event.target
       let rawTask = {
+         // @ts-ignore
          description: form.task.value
       }
 
 
       console.log('raw task:', rawTask)
+      // @ts-ignore
       let task = new Task(rawTask)
 
 
@@ -62,6 +64,7 @@ export default class TasksController {
          console.error('controller failed to add task', error)
       }
 
+      // @ts-ignore
       form.reset()
    }
 
@@ -78,7 +81,7 @@ export default class TasksController {
       try {
          await tasksService.isTaskChecked(id)
       } catch (error) {
-         console.error('unable to mark task complete', id, erorr)
+         console.error('unable to mark task complete', id, error)
       }
    }
 }

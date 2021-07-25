@@ -1,4 +1,5 @@
 import Clock from "./Controllers/ClockController.js";
+import NameController from "./Controllers/NameController.js";
 import QuotesController from "./Controllers/QuotesController.js";
 import TasksController from "./Controllers/TasksController.js";
 import { backgroundService } from "./Services/BackgroundService.js";
@@ -16,6 +17,8 @@ class App {
   tasksController = new TasksController()
 
   weather = weatherService
+
+  nameController = new NameController()
 
 }
 
