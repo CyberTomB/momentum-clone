@@ -18,7 +18,7 @@ export default class Clock {
       if (ProxyState.clock24) {
          template = `${hour}:${min}`
       } else {
-         template = `${hour - 12}:${min} ${hour < 12 ? 'AM' : 'PM'}`
+         template = `${hour > 12 ? hour - 12 : hour}:${min} ${hour < 12 ? 'AM' : 'PM'}`
       }
       document.getElementById("clock").innerText = template;
       setTimeout(() => this.currentTime(), 1000)
