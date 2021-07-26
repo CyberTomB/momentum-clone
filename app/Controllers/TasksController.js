@@ -20,11 +20,11 @@ function _drawTasks() {
 function _drawTodoCount() {
    console.log('drawing todo')
    let completedTasks = 0
-   let totalTasks = 0
+   let totalTasks = ProxyState.tasks.length
    let template = ':'
    ProxyState.tasks.forEach(t => {
       t.completed ? completedTasks += 1 : completedTasks += 0
-      totalTasks += 1
+      // totalTasks += 1
    })
    if (totalTasks) {
       template = ` (${completedTasks}/${totalTasks}):`
