@@ -4,24 +4,20 @@ import { loadState, saveState } from "../Utils/LocalStorage.js";
 import { sandBoxApi } from "./AxiosService.js";
 
 function _drawWeather() {
-   console.log('draw-weather:', ProxyState.weather)
-   console.log('weather template:', ProxyState.weather.Template)
    document.getElementById('weather').innerHTML = ProxyState.weather.Template
-   console.log('I drew the weather')
 }
 class WeatherService {
    constructor() {
       loadState()
       this.getWeather()
-      ProxyState.on('weather', _drawWeather, saveState)
+      ProxyState.on('weather', _drawWeather)
+      ProxyState.on('celsius', saveState)
    }
 
    async getWeather() {
       let res = await sandBoxApi.get('weather')
-      console.log('weather data:', res.data)
+      console.log('weather api:', res.data)
       ProxyState.weather = new Weather(res.data, ProxyState.celsius)
-      console.log('weather object: ', ProxyState.weather)
-      console.log('weather html', ProxyState.weather.Template)
    }
 
    setTempFormat(bool) {
