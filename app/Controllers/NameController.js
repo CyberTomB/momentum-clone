@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js"
+import { saveState } from "../Utils/LocalStorage.js"
 
 let greeting = document.getElementById('greeting')
 
@@ -8,7 +9,7 @@ function _drawGreeting() {
 export default class NameController {
    constructor() {
       _drawGreeting()
-      ProxyState.on('name', _drawGreeting)
+      ProxyState.on('name', _drawGreeting, saveState)
    }
 
    changeName() {

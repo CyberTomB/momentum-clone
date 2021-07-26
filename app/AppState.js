@@ -4,8 +4,9 @@ import { isValidProp } from "./Utils/isValidProp.js"
 class AppState extends EventEmitter {
   tasks = []
   weather = {}
+  celsius = false
 
-  name = ''
+  name = 'Big Chungus'
 }
 
 export const ProxyState = new Proxy(new AppState(), {
