@@ -26,8 +26,11 @@ export default class NameController {
    changeName() {
       event.preventDefault()
       let form = event.target
+      // @ts-ignore
       ProxyState.name = form.name.value
+      // @ts-ignore
       console.log('change name controller fired', form.name.value)
+      // @ts-ignore
       form.reset()
 
    }

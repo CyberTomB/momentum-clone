@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import { saveState } from "../Utils/LocalStorage.js";
 
 export default class Clock {
 
@@ -25,6 +26,7 @@ export default class Clock {
 
    setFormat() {
       ProxyState.clock24 = !ProxyState.clock24
+      saveState()
       this.currentTime()
    }
 
