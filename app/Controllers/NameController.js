@@ -34,10 +34,9 @@ export default class NameController {
 
    unlockName() {
       greeting.innerHTML = `
-      <h3 class="float-left">Good Day</h3>
-                    <form onsubmit="app.nameController.changeName()" class="float-right">
-                        <input type="text" minlength="3" maxlength="20" name="name">
-                    </form>`
+   <form onsubmit="app.nameController.changeName()">
+      <input placeholder="Your Name Here" type="text" minlength="3" maxlength="20" name="name">
+   </form>`
    }
 }
 

@@ -4,6 +4,7 @@ import { loadState, saveState } from "../Utils/LocalStorage.js";
 import { sandBoxApi } from "./AxiosService.js";
 
 function _drawWeather() {
+   console.log('I drew the weather')
    document.getElementById('weather').innerHTML = ProxyState.weather.Template
 }
 class WeatherService {
@@ -20,12 +21,12 @@ class WeatherService {
       ProxyState.weather = new Weather(res.data, ProxyState.celsius)
    }
 
-   setTempFormat(bool) {
-      ProxyState.weather.celsius = bool
-      ProxyState.celsius = bool
-      console.log('boolean passed:', bool)
-      console.log('weather obj in set format:', ProxyState.weather)
+   setTempFormat() {
+      console.log(ProxyState.weather.celsius)
+      ProxyState.weather.celsius = !ProxyState.weather.celsius
+      ProxyState.celsius = !ProxyState.celsius
       ProxyState.weather = ProxyState.weather
+      console.log(ProxyState.weather.celsius)
    }
 }
 

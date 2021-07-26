@@ -7,6 +7,7 @@ class AppState extends EventEmitter {
   celsius = false
 
   name = 'Big Chungus'
+  clock24 = true
 }
 
 export const ProxyState = new Proxy(new AppState(), {
