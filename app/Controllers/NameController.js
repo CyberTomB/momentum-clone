@@ -4,8 +4,17 @@ import { saveState } from "../Utils/LocalStorage.js"
 let greeting = document.getElementById('greeting')
 
 function _drawGreeting() {
-   console.log('draw greeting heard that')
-   greeting.innerHTML = `<h3 class="action" onclick="app.nameController.unlockName()">Good Day ${ProxyState.name}</h3>`
+   let date = new Date()
+   let time = date.getHours()
+   let phrase = ''
+   if (time > 18 || time < 5) {
+      phrase = 'Evening,'
+   } else if (time > 12) {
+      phrase = 'Afternoon,'
+   } else {
+      phrase = 'Morning,'
+   }
+   greeting.innerHTML = `<h3 class="action" onclick="app.nameController.unlockName()">Good ${phrase} ${ProxyState.name}</h3>`
 }
 export default class NameController {
    constructor() {
